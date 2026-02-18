@@ -1,0 +1,11 @@
+{
+  "name": "klaviyo-campaign-create",
+  "type": "module",
+  "main": "index.ts",
+  "dependencies": {
+    "@portabletext/to-html": "^5.0.0",
+    "@sanity/client": "^7.13.2",
+    "@sanity/functions": "^1.0.3",
+    "sanity": "^5.1.0"
+  }
+}

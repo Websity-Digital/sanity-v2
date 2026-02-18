@@ -1,0 +1,45 @@
+{
+  "name": "websity-backend",
+  "private": true,
+  "version": "1.0.0",
+  "main": "package.json",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "deploy-graphql": "sanity graphql deploy"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/dashboard": "^5.0.1",
+    "@sanity/table": "^2.0.1",
+    "@sanity/ui": "^3.1.11",
+    "@sanity/vision": "^5.10.0",
+    "react": "^19.1",
+    "react-dom": "^19.1",
+    "sanity": "^5.10.0",
+    "sanity-plugin-asset-source-unsplash": "^7.0.0",
+    "sanity-plugin-media": "^4.1.1",
+    "sanity-plugin-rich-table": "^1.0.1",
+    "styled-components": "^6.1.18"
+  },
+  "devDependencies": {
+    "@sanity/eslint-config-studio": "^5.0.2",
+    "@types/node": "^25.2.3",
+    "@types/react": "^19.1",
+    "eslint": "^9.28",
+    "prettier": "^3.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 100,
+    "bracketSpacing": false,
+    "singleQuote": true
+  }
+}
