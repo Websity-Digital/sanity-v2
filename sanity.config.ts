@@ -11,6 +11,9 @@ import {media} from 'sanity-plugin-media'
 import { unsplashImageAsset, unsplashAssetSource } from 'sanity-plugin-asset-source-unsplash'
 import {schemaTypes} from './schemaTypes'
 import {richTablePlugin} from 'sanity-plugin-rich-table'
+import {locations, mainDocuments} from './lib/presentation/resolve'
+import { references } from 'sanity-plugin-references'
+import {codeInput} from '@sanity/code-input'
 
 export const structure: StructureResolver = (S) =>
     S.list().title('Base').items(
@@ -25,17 +28,20 @@ export default defineConfig({
 
     plugins: [structureTool(), visionTool(), presentationTool({
         // 2. Point it to your Next.js local development URL
+        resolve: {locations, mainDocuments},
         previewUrl: {
-            initial: 'http://localhost:3000',
+            initial: 'https://websity-nextjs.vercel.app',
             previewMode: {
                 enable: '/api/draft-mode/enable',
-
+                disable:'api/draft-mode/disable'
             },
         },
-    }),dashboardTool({ widgets: [ sanityTutorialsWidget(), projectInfoWidget(), projectUsersWidget(),]}),
+        allowOrigins:['http://localhost:*', 'https://websitydigital.com', 'https://websity-nextjs.vercel.app'],
+
+    }),dashboardTool({ widgets: [ sanityTutorialsWidget(), projectInfoWidget(), projectUsersWidget()]}),
         media(),
         unsplashImageAsset(),
-        richTablePlugin({})],
+        richTablePlugin({}), references(),codeInput()],
     form: {
         image: {
             assetSources: (previousAssetSources, { schema }) => {
